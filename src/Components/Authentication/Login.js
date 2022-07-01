@@ -47,7 +47,6 @@ const Login = () => {
             <p className='text-center my-2'>Are You New Here?<Link to='/register' className='text-blue-300'>Please register</Link></p>
 
             {errorElement2}
-            <SocialLogin></SocialLogin>
         </div>
     );
 };

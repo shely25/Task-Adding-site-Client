@@ -9,12 +9,16 @@ import AddTask from './Components/AddTask';
 import Calender from './Components/Calender';
 import Ctask from './Components/Ctask';
 import ToDo from './Components/ToDo';
+import Home from './Components/Home';
+import Footer from './Components/Footer';
 
 function App() {
   return (
     <div>
       <Navber></Navber>
       <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/todo" element={<RequireAuth><ToDo /></RequireAuth>} />
         <Route path="/addtask" element={<RequireAuth><AddTask /></RequireAuth>} />
         <Route path="/ctask" element={<RequireAuth><Ctask /></RequireAuth>} />
@@ -22,6 +26,7 @@ function App() {
         <Route path="/logIn" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

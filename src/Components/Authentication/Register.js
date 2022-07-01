@@ -36,7 +36,7 @@ const Register = () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ Email: data.email, Name: data.Name }),
+            body: JSON.stringify({ Email: data.email, Name: data.Name, Task: [] }),
         })
             .then(response => response.json())
             .then(data => {
@@ -68,7 +68,6 @@ const Register = () => {
             {errorElement1}
 
             <p className='text-center my-2'>Already have an account?<Link to='/LogIn' className='text-blue-300'>Please Log In</Link></p>
-            <SocialLogin></SocialLogin>
         </div>
     );
 };

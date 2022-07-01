@@ -5,12 +5,9 @@ import auth from '../firebase.init';
 
 const AddTask = () => {
     const { register, handleSubmit } = useForm();
-    const task = []
     const [user] = useAuthState(auth)
     const onSubmit = data => {
-        task.push(data.task)
-        console.log(task)
-        const tasks = { Task: task }
+        const tasks = { Task: data.task }
         console.log(tasks)
         const url = `http://localhost:5000/tasks?email=${user.email}`
         fetch(url, {
