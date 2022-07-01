@@ -21,8 +21,18 @@ const Navber = () => {
                         <li><Link to='/todo'>To-DO</Link></li>
                         <li><Link to='/ctask'>Completed Task</Link></li>
                         <li><Link to='/calender'>Calender</Link></li>
-                        <li><Link to='/login'>Log In</Link></li>
-                        <li><Link to='/register'>Register</Link></li>
+                        {
+                            user ? <>
+                                <li>
+                                    <button className='border-0' onClick={handleSignout}>Sign Out</button>
+                                </li>
+                            </>
+                                :
+                                <>
+                                    <li><Link to='/login'>Log In</Link></li>
+                                    <li><Link to='/register'>Register</Link></li></>
+                        }
+
                     </ul>
                 </div>
                 <Link to='/home' className="btn btn-ghost normal-case text-xl">Home</Link>
@@ -33,8 +43,18 @@ const Navber = () => {
                     <li><Link to='/todo'>To-DO</Link></li>
                     <li><Link to='/ctask'>Completed Task</Link></li>
                     <li><Link to='/calender'>Calender</Link></li>
-                    <li><Link to='/login'>Log In</Link></li>
-                    <li><Link to='/register'>Register</Link></li>
+                    {
+                        user ? <>
+                            <li>
+                                <button className='border-0' onClick={handleSignout}>Sign Out</button>
+                            </li>
+                        </>
+                            :
+                            <>
+                                <li><Link to='/login'>Log In</Link></li>
+                                <li><Link to='/register'>Register</Link></li>
+                            </>
+                    }
                 </ul>
             </div>
         </div>
