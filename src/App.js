@@ -1,23 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Login from './Components/Authentication/Login';
+import Register from './Components/Authentication/Register';
+import RequireAuth from '../src/Components/Authentication/RequireAuth';
+import Navber from './Components/Navber';
+import AddTask from './Components/AddTask';
+import Calender from './Components/Calender';
+import Ctask from './Components/Ctask';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navber></Navber>
+      <Routes>
+        <Route path="/todo" element={<RequireAuth><Login /></RequireAuth>} />
+        <Route path="/addtask" element={<RequireAuth><AddTask /></RequireAuth>} />
+        <Route path="/ctask" element={<RequireAuth><Ctask /></RequireAuth>} />
+        <Route path="/calender" element={<Calender />} />
+        <Route path="/logIn" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
     </div>
   );
 }
