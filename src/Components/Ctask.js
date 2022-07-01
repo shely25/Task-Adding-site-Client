@@ -6,7 +6,7 @@ const Ctask = () => {
     const [ctask, setCtask] = useState({})
     const [user] = useAuthState(auth)
     useEffect(() => {
-        fetch(`http://localhost:5000/Completetask?email=${user?.email}`)
+        fetch(`https://hydro-leaf-72466.herokuapp.com/Completetask?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setCtask(data))
     }, [])

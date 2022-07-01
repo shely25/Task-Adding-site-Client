@@ -6,14 +6,14 @@ const ToDo = () => {
     const [tasks, setTasks] = useState({})
     const [user] = useAuthState(auth)
     useEffect(() => {
-        fetch(`http://localhost:5000/taskOne?email=${user?.email}`)
+        fetch(`https://hydro-leaf-72466.herokuapp.com/taskOne?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setTasks(data))
     }, [])
     const Handler = event => {
         if (event.target.checked) {
             const removetask = { Rtask: event.target.value }
-            const url = `http://localhost:5000/removeTask?email=${user.email}`
+            const url = `https://hydro-leaf-72466.herokuapp.com/removeTask?email=${user.email}`
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -28,7 +28,7 @@ const ToDo = () => {
                 .catch((error) => {
                     console.error('Error:', error);
                 });
-            const url2 = `http://localhost:5000/checkedTask?email=${user.email}`
+            const url2 = `https://hydro-leaf-72466.herokuapp.com/checkedTask?email=${user.email}`
             fetch(url2, {
                 method: 'PUT',
                 headers: {

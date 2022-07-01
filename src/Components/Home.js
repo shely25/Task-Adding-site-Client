@@ -7,7 +7,7 @@ const Home = () => {
     const [tasks, setTasks] = useState({})
     const [user] = useAuthState(auth)
     useEffect(() => {
-        fetch(`http://localhost:5000/taskOne?email=${user?.email}`)
+        fetch(`https://hydro-leaf-72466.herokuapp.com/taskOne?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setTasks(data))
     }, [])

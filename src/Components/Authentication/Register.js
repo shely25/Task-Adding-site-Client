@@ -30,7 +30,7 @@ const Register = () => {
         console.log(data)
         await createUserWithEmailAndPassword(data.email, data.password)
         await updateProfile({ displayName: data.Name })
-        const url = 'http://localhost:5000/tasks'
+        const url = 'https://hydro-leaf-72466.herokuapp.com/tasks'
         fetch(url, {
             method: 'POST',
             headers: {

@@ -9,7 +9,7 @@ const AddTask = () => {
     const onSubmit = data => {
         const tasks = { Task: data.task }
         console.log(tasks)
-        const url = `http://localhost:5000/tasks?email=${user.email}`
+        const url = `https://hydro-leaf-72466.herokuapp.com/tasks?email=${user.email}`
         fetch(url, {
             method: 'PUT',
             headers: {
